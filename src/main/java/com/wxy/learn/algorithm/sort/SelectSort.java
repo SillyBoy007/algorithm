@@ -11,10 +11,13 @@ public class SelectSort {
             return;
         }
 
+        int count = 0;
         for (int i = 0; i < n-1; i++) {
             // 查找最小值
             int minIndex = i;
             for (int j = i + 1; j < n; ++j) {
+                System.out.println("第"+ ++count+"次循环:"+ Arrays.toString(arr));
+
                 if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
