@@ -20,6 +20,7 @@ public class ShellSort {
                 int value = arr[i];
                 int j = i - step;
                 for (; j >= 0; j = j - step) {
+
                     if (value < arr[j]) {
                         arr[j+step] = arr[j];
                     } else {
@@ -38,9 +39,10 @@ public class ShellSort {
         }
     }
 
+
     public static void main(String[] args) {
         int [] arr = {4,5,6,3,2,1};
         shellSort(arr);
-        System.out.println(Arrays.toString(arr));
+       // System.out.println(Arrays.toString(arr));
     }
 }
