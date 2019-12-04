@@ -2,6 +2,10 @@ package com.wxy.learn.algorithm.sort.practice;
 
 import java.util.Arrays;
 
+/**
+ * 第一次练习:
+ * 完成度：60
+ */
 public class InsertSort {
     public static void insertSort(int[] arr) {
         int len = arr.length;

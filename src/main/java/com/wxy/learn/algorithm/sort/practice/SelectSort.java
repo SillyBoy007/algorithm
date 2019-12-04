@@ -2,6 +2,10 @@ package com.wxy.learn.algorithm.sort.practice;
 
 import java.util.Arrays;
 
+/**
+ * 第一次练习:
+ * 完成度：100
+ */
 public class SelectSort {
     public static void selectSort(int[] arr) {
         int len = arr.length;

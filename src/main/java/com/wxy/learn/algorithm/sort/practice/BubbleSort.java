@@ -3,7 +3,8 @@ package com.wxy.learn.algorithm.sort.practice;
 import java.util.Arrays;
 
 /**
- * 冒泡排序
+ * 第一次练习:
+ * 完成度：60
  */
 public class BubbleSort {
     public static void bubbleSort(int[] arr) {

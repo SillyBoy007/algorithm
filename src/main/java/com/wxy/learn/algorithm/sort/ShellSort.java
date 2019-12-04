@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 /**
  * @author wxy
- * 希尔
+ * 希尔 (O n3/2)
+ *
  */
 public class ShellSort {
     public static void shellSort(int[] arr) {
@@ -20,18 +21,17 @@ public class ShellSort {
                 int value = arr[i];
                 int j = i - step;
                 for (; j >= 0; j = j - step) {
+                    System.out.println("第"+ ++count+"次循环:"+ Arrays.toString(arr));
 
                     if (value < arr[j]) {
                         arr[j+step] = arr[j];
-                    } else {
+                    }
+                    else {
                         break;
                     }
 
                 }
-
                 arr[j+step] = value;
-                System.out.println("第"+ ++count+"次循环:"+ Arrays.toString(arr));
-
             }
 
             step = step / 2;
