@@ -10,6 +10,7 @@ public class MergeSort {
     }
 
     private static void mergeSortInternally(int[] a, int p, int r) {
+        System.out.println("r:"+r+","+"p:"+p);
 
         // 递归终止条件
         if (p >= r) {
@@ -21,15 +22,17 @@ public class MergeSort {
 
         mergeSortInternally(a, p, q);
 
-        mergeSortInternally(a, p + 1, r);
+        mergeSortInternally(a, q + 1, r);
 
         merge(a, p, q, r);
     }
 
     private static void merge(int[] arr, int p, int q, int r) {
+
         int i = p;
         int j = q + 1;
         int k = 0;
+        System.out.println("r:"+r+","+"i:"+i+",j:"+j);
 
         // 申请一个大小跟a[p...r]一样的临时数组
         int[] tmp = new int[r - p + 1];
@@ -58,7 +61,7 @@ public class MergeSort {
 
         // 将tmp中的数组拷贝回a[p...r]
 
-        for (i = 0; i <= r - p; i++) {
+        for (i = 0; i <= r - p; ++i) {
             arr[p + i] = tmp[i];
         }
 
