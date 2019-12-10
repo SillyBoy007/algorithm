@@ -3,56 +3,51 @@ package com.wxy.learn.algorithm.sort.practice;
 import java.util.Arrays;
 
 public class MergeSort {
-
     public static void mergeSort(int[] a, int n) {
-        mergeSortInternally(a, 0, n - 1);
+        reMerge(a, 0, n - 1);
     }
 
-    private static void mergeSortInternally(int[] a, int p, int r) {
-        if (p >= r) {
+    public static void reMerge(int[] a, int low, int r) {
+        if (low >= r) {
             return;
         }
-        int q = p + (r - p) / 2;
-        /**
-         * 左边排序
-         */
-        mergeSortInternally(a, p, q);
-        /**
-         * 右边边排序
-         */
-        mergeSortInternally(a, q + 1, r);
 
-        merge(a, p, q, r);
+        int m = low + (r - low) / 2;
+
+        reMerge(a, low, m);
+        reMerge(a, m + 1, r);
+        merge(a, low, m, r);
     }
 
-    private static void merge(int[] a, int p, int q, int r) {
-        int low = p;
-        int high = q + 1;
-        int[] tmp = new int[r - p + 1];
+    public static void merge(int[] a, int low, int m, int r) {
+        int i = low;
+        int j = m + 1;
         int k = 0;
-        while (low <= q && high <= r) {
-            if (a[low] <= a[high]) {
-                tmp[k++] = a[low ++];
-            }else {
-                tmp[k++] = a[high ++];
+        int[] tmp = new int[r - low + 1];
+
+        while (i <= m && j <= r) {
+            if (a[i] <= a[j]) {
+                tmp[k++] = a[i++];
+            } else {
+                tmp[k++] = a[j++];
             }
         }
 
-        while (low<=q){
-            tmp[k++] = a[low ++];
-        }
-        while (high<=r){
-            tmp[k++] = a[high ++];
+        while (i<=m){
+            tmp[k++] = a[i++];
         }
 
-        for (int i=0;i<tmp.length;i++){
-            a[p+i] = tmp[i];
+        while (j<=r){
+            tmp[k++] = a[j++];
+        }
+        for (int l=0;l<tmp.length;l++){
+            a[l+low] = tmp[l];
         }
     }
 
     public static void main(String[] args) {
-        int [] a = {6,5,4,3,2,1};
-        mergeSort(a,a.length);
-        System.out.println(Arrays.toString(a));
+        int[] array = new int[]{2, 3, 1, 6, 4, 5,-2,-1};
+        mergeSort(array,  array.length);
+        System.out.println(Arrays.toString(array));
     }
 }

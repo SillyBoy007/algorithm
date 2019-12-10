@@ -1,35 +1,51 @@
-//package com.wxy.learn.algorithm.sort.practice;
-//
-//public class QuickSort {
-//    public static void quickSort(int[] a, int n) {
-//        quickSortInternally(a, 0, n - 1);
-//    }
-//
-//    public static void quickSortInternally(int[] a, int low, int high) {
-//        if (low >= high) {
-//            return;
-//        }
-//        // 获取分区点
-//        int m = partition(a, low, high);
-//
-//        quickSortInternally(a, low, m);
-//        quickSortInternally(a, m + 1, high);
-//
-//    }
-//
-//    public static int partition(int[] a, int low, int high) {
-//        // 切分元素
-//        int p = a[low];
-//        // 下一个小于切分元素可插入的位置
-//        int i = low;
-//
-//        for (int j = low; j < high; j++) {
-//
-//        }
-//
-//    }
-//
-//    public static void main(String[] args) {
-//
-//    }
-//}
+package com.wxy.learn.algorithm.sort.practice;
+
+import java.util.Arrays;
+
+public class QuickSort {
+
+    public static void quickSort(int[] a, int n) {
+        reQuick(a, 0, n - 1);
+    }
+
+    public static void reQuick(int[] a, int low, int high) {
+        if (low >= high) {
+            return;
+        }
+
+        int pivot = quick(a, low, high);
+        reQuick(a, low, pivot - 1);
+        reQuick(a, pivot + 1, high);
+
+    }
+
+    public static int quick(int[] a, int low, int high) {
+        int pivot = a[high];
+        int i = low;
+
+        for (int j = low; j < high; j++) {
+            if (a[j] < pivot) {
+                if (j == i) {
+                    i++;
+                } else {
+                    int tmp = a[i];
+                    a[i++] = a[j];
+                    a[j] = tmp;
+                }
+            }
+        }
+
+        int tmp = a[high];
+        a[high] = a[i];
+        a[i] = tmp;
+
+        return i;
+    }
+
+
+    public static void main(String[] args) {
+        int[] array = new int[]{6, 5, 4, 3, 2, 1,9,8,7};
+        quickSort(array, array.length);
+        System.out.println(Arrays.toString(array));
+    }
+}
