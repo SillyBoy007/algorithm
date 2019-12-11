@@ -11,15 +11,15 @@ public class ShellSort {
                 int value = a[i];
                 int j = i - step;
                 for (; j >= 0; j = j - step) {
-                    if (a[i] < a[j]) {
+                    if (value < a[j]) {
                         a[j + step] = a[j];
                     } else {
                         break;
                     }
                 }
                 a[j + step] = value;
-                step = step / 2;
             }
+            step = step / 2;
         }
 
 
