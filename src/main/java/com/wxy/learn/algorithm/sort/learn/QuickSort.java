@@ -24,7 +24,7 @@ public class QuickSort {
         // 从切分元素下一个位置开始，遍历整个数组，进行分区
         for (int j = low + 1; j <= high; j++) {
             // 往前移动比切分元素小的元素
-            if (a[j] < p && (i++ != j)) {
+            if (a[j] <= p && (i++ != j)) {
                 int tmp = a[j];
                 a[j] = a[i];
                 a[i] = tmp;
