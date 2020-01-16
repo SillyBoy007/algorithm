@@ -3,9 +3,8 @@ package com.wxy.learn.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * @author wxy
  * 希尔 (O n3/2)
- *
+ * @author wxy
  */
 public class ShellSort {
     public static void shellSort(int[] arr) {

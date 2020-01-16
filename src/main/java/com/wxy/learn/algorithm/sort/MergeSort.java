@@ -2,6 +2,9 @@ package com.wxy.learn.algorithm.sort;
 
 import java.util.Arrays;
 
+/**
+ * 归并排序
+ */
 public class MergeSort {
     // 归并排序算法, a是数组，n表示数组大小
 

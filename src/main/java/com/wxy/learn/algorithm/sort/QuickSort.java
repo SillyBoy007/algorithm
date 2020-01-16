@@ -2,6 +2,9 @@ package com.wxy.learn.algorithm.sort;
 
 import java.util.Arrays;
 
+/**
+ * 快速排序
+ */
 public class QuickSort {
     // 快速排序，a是数组，n表示数组的大小
     public static void quickSort(int[] a, int n) {

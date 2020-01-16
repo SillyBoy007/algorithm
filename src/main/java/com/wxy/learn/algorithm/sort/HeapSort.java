@@ -12,7 +12,7 @@ public class HeapSort {
         if (arr.length <= 1) {
             return;
         }
-        //1.建堆
+        //1.建堆复杂度
         buildHeap(arr);
 
         //2.排序

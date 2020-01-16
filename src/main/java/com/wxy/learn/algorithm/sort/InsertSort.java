@@ -3,6 +3,7 @@ package com.wxy.learn.algorithm.sort;
 import java.util.Arrays;
 
 /**
+ * 插入排序
  * @author wxy
  */
 public class InsertSort {

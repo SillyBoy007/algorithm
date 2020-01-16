@@ -3,6 +3,8 @@ package com.wxy.learn.algorithm.sort;
 import java.util.Arrays;
 
 /**
+ * 选择排序
+ * (On2),不稳定,原地排序(O1)
  * @author wxy
  */
 public class SelectSort {

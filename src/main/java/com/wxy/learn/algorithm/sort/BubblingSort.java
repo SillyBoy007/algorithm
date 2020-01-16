@@ -5,6 +5,7 @@ import java.util.Arrays;
 /**
  * @author wxy
  * 冒泡排序，冒泡排序优化
+ *(On2),稳定,原地排序(O1)
  */
 public class BubblingSort {
     public static void bubblingSort(int[] arr, int size) {
