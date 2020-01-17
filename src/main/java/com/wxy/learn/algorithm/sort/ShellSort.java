@@ -3,7 +3,7 @@ package com.wxy.learn.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * 希尔 (O n3/2)
+ * 希尔 (O n3/2) 稳定 原地排序
  * @author wxy
  */
 public class ShellSort {

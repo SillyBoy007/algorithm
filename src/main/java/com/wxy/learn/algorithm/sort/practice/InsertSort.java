@@ -3,7 +3,7 @@ package com.wxy.learn.algorithm.sort.practice;
 import java.util.Arrays;
 
 /**
- * has not impl
+ * @author wxy
  */
 public class InsertSort {
 
@@ -12,24 +12,24 @@ public class InsertSort {
         if (n <= 1) {
             return;
         }
+
         for (int i = 1; i < n; i++) {
             int j = i - 1;
             int value = a[i];
             for (; j >= 0; j--) {
-                if (a[j] > value) {
-                    a[j + 1] = a[j];
+                if (value < a[j]) {
+                    a[j+1] = a[j];
                 } else {
                     break;
                 }
             }
 
-            a[j + 1] = value;
+            a[j+1] = value;
         }
     }
 
-
     public static void main(String[] args) {
-        int[] a = {7, 3, 1, 2, 4};
+        int[] a = {4,3,2,1};
         insertSort(a);
         System.out.println(Arrays.toString(a));
     }
