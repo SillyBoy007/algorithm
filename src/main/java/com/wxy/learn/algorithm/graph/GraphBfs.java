@@ -5,13 +5,16 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * 图-邻接表 深度优先遍历
+ * 无向图-邻接表 深度优先遍历
  * @author wangxiayun
  * @since 2020-03-19
  */
 public class GraphBfs {
+    /**
+     * 顶点个数
+     */
     private int v;
-    private List<Integer> adj[];
+    private List<Integer> adj[]; // 邻接表
 
     public GraphBfs(int v) {
         this.v = v;

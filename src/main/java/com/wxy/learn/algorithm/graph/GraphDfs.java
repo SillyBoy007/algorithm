@@ -3,7 +3,7 @@ package com.wxy.learn.algorithm.graph;
 import java.util.LinkedList;
 
 /**
- *  图遍历-深度优先
+ *  无向图遍历-深度优先
  * @author wangxiayun
  * @since 2020-03-20
  */
