@@ -11,20 +11,8 @@ import java.util.Objects;
  * @since 2020/3/24
  **/
 @Slf4j
-public class DynamicArray {
-    /**
-     * 数组实际大小
-     */
-    private int size;
+public class DynamicArray extends BaseArray{
 
-    /**
-     * 数组容积
-     */
-    private int capacity;
-    /**
-     * 数组容器
-     */
-    private int[] arr;
 
     public DynamicArray(int capacity) {
         this.capacity = capacity;
@@ -66,6 +54,9 @@ public class DynamicArray {
         }
 
     }
+    public int getSize() {
+        return size;
+    }
 
     public int get(int index) {
         return this.arr[index];
@@ -94,18 +85,7 @@ public class DynamicArray {
         this.capacity = cutSize;
     }
 
-    public void print() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-        for (int i = 0; i < size; i++) {
-            sb.append(arr[i]);
-            if (i != size - 1) {
-                sb.append(",");
-            }
-        }
-        sb.append("]");
-        log.info("arr:{},capacity:{},size:{}", sb.toString(), this.capacity, this.size);
-    }
+
 
     public static void main(String[] args) {
         DynamicArray arr = new DynamicArray(2);
