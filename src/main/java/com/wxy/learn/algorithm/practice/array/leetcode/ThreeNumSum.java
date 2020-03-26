@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.practice.array;
+package com.wxy.learn.algorithm.practice.array.leetcode;
 
 import java.util.*;
 
@@ -40,7 +40,8 @@ public class ThreeNumSum {
     }
 
     /**
-     * 力扣解法
+     * 力扣解法 On^2
+     * 先排序，利用双指针
      *
      * @param a
      * @return
@@ -63,26 +64,32 @@ public class ThreeNumSum {
                 return list;
             }
 
-            int L = 0;
+            if (i > 0 && a[i] == a[i - 1]) {
+                continue;
+            }
+
+            int L = i + 1;
             int R = a.length - 1;
 
             while (L < R) {
                 int sum = a[L] + a[R] + a[i];
-                if (sum == 0 && i != L && i != R) {
-                    list.add(Arrays.asList(a[L], a[R], a[i]));
-                    while (a[L] == a[L + 1]) {
+                if (sum == 0) {
+                    list.add(Arrays.asList(a[L], a[i], a[R]));
+                    while (L < R && a[L] == a[L + 1]) {
                         L++;
                     }
-                    while (a[R] == a[R - 1]) {
+                    while (L < R && a[R] == a[R - 1]) {
                         R--;
                     }
+                    L++;
+                    R--;
+
                 } else if (sum > 0) {
                     R--;
-                } else if (sum < 0) {
+                } else {
                     L++;
                 }
-                L++;
-                R--;
+
             }
 
         }
@@ -91,7 +98,7 @@ public class ThreeNumSum {
     }
 
     public static void main(String[] args) {
-        int[] a = {-1, 0, 1, 2, -9, -4};
+        int[] a = {-1, 0, 1, 2, -9, -4,9};
         System.out.println(threeNum(a));
     }
 }

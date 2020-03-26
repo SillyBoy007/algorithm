@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.practice.array;
+package com.wxy.learn.algorithm.practice.array.leetcode;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -38,7 +38,7 @@ public class TwoNumSum {
 
     /**
      * 哈希表 (On)
-     * 不能保证是否有
+     * 不能保证数组中含有相同元素的情况
      *
      * @return
      */
