@@ -14,41 +14,6 @@ public class SortArray extends BaseArray {
         this.capacity = capacity;
     }
 
-//    public void add(int data) {
-//        if (size == 0) {
-//            arr[size] = data;
-//            size++;
-//            return;
-//        }
-//
-//
-//        if (arr[size - 1] <= data) {
-//
-//            arr[size] = data;
-//            size++;
-//            return;
-//        }
-//
-//        for (int i = 0; i < arr.length-1; i++) {
-//            if (arr[i] >= data) {
-//                for (int j = i; j < arr.length-1; j++) {
-//                    arr[j+1] = arr[j];
-//                }
-//                arr[i] = data;
-//                size++;
-//            } else {
-//                /**
-//                 * 若要插入的位置是第一位
-//                 */
-//                for (int k = 0; k < arr.length-1; k++) {
-//                    arr[k + 1] = arr[k];
-//                }
-//                arr[0] = data;
-//                size++;
-//            }
-//        }
-//
-//    }
 
     public boolean add(int value) {
         // 判断是否为空
