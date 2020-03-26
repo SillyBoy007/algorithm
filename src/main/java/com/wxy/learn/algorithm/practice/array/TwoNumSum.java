@@ -1,6 +1,8 @@
 package com.wxy.learn.algorithm.practice.array;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 两数之和
@@ -11,12 +13,19 @@ import java.util.Arrays;
  **/
 public class TwoNumSum {
 
+    /**
+     * 暴力遍历
+     *
+     * @param a
+     * @param target
+     * @return
+     */
     public static int[] twoNumSum(int[] a, int target) {
-       int count = 0;
+        int count = 0;
         for (int i = 1; i < a.length; i++) {
             int j = i - 1;
             for (; j >= 0; j--) {
-                System.out.println("循环次数"+(++count));
+                System.out.println("循环次数" + (++count));
                 if (target == a[i] + a[j]) {
                     return new int[]{i, j};
                 }
@@ -27,24 +36,27 @@ public class TwoNumSum {
 
     }
 
-    public static int[] twoSum(int[] nums, int target) {
-        int count = 0;
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                System.out.println("循环次数"+(++count));
-                if (nums[j] == target - nums[i]) {
-                    return new int[] { i, j };
-                }
+    /**
+     * 哈希表
+     *
+     * @return
+     */
+    public static int[] hashTowSum(int[] a, int target) {
+        Map<Integer, Integer> map = new HashMap<>(a.length);
+        for (int i = 0; i < a.length; i++) {
+            map.put(a[i], i);
+            int num = target - a[i];
+            if (map.containsKey(num) && map.get(num) != i) {
+                return new int[]{map.get(num),i};
             }
         }
-        throw new IllegalArgumentException("No two sum solution");
+        return null;
     }
-
 
 
     public static void main(String[] args) {
         int[] a = {-3, 0, 1, 7, -1, -2};
 
-        System.out.println(Arrays.toString(twoSum(a, 0)));
+        System.out.println(Arrays.toString(hashTowSum(a, 0)));
     }
 }
