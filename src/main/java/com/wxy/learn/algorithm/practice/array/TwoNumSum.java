@@ -14,7 +14,7 @@ import java.util.Map;
 public class TwoNumSum {
 
     /**
-     * 暴力遍历
+     * 暴力遍历 (On^2)
      *
      * @param a
      * @param target
@@ -37,7 +37,8 @@ public class TwoNumSum {
     }
 
     /**
-     * 哈希表
+     * 哈希表 (On)
+     * 不能保证是否有
      *
      * @return
      */
