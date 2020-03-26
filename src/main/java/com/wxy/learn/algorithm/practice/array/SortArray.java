@@ -63,17 +63,23 @@ public class SortArray extends BaseArray {
             if (size > 0 && arr[0] > value) {
                 // 插入数组第一个位置
                 for (int j = size - 1; j >= 0; j--) {
-                    arr[j + 1] = arr[j];
+                    if(j<capacity-1){
+                        arr[j + 1] = arr[j];
+                    }
                 }
                 arr[0] = value;
-                size++;
+                if (size<capacity){
+                    size++;
+                }
                 return true;
             }
 
             // 判断是否大于最后一个元素
             if (value >= arr[size - 1]) {
-                arr[size] = value;
-                size++;
+                arr[size-1] = value;
+                if (size<capacity){
+                    size++;
+                }
                 return true;
             }
 
@@ -94,7 +100,9 @@ public class SortArray extends BaseArray {
                     }
                 }
                 arr[n] = value;
-                size++;
+                if (size<capacity){
+                    size++;
+                }
                 return true;
             }
             return false;
@@ -119,6 +127,10 @@ public class SortArray extends BaseArray {
         sortArray.add(1);
         sortArray.add(5);
         sortArray.add(2);
+
+        sortArray.add(-1);
+
+        sortArray.add(6);
 
         sortArray.print();
     }
