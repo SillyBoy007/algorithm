@@ -4,7 +4,7 @@ import java.util.*;
 
 
 /**
- *
+ * 求众数
  * @author wangxiayun
  * @since 2020/3/26
  **/
