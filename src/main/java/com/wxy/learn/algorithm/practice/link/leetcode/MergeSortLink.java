@@ -15,13 +15,14 @@ import java.util.PriorityQueue;
 public class MergeSortLink {
 
     /**
-     * 一.优先级队列(时间(On*logn) 空间(On))
+     * 一.优先级队列(堆)(时间(On*logn) 空间(On))
+     *
      */
     public static SingleList.Node mergeKLists(SingleList.Node[] nodes) {
         if (nodes == null || nodes.length == 0) {
             return null;
         }
-
+        //创建一个堆，并设置元素的排序方式
         PriorityQueue<SingleList.Node> queue = new PriorityQueue<>(nodes.length, (o1, o2) -> {
             if (o1.data < o2.data) {
                 return -1;

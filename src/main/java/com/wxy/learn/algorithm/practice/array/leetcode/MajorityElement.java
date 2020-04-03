@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class MajorityElement {
 
     /**
-     * 方法一: leetCode HashMap方法 (时间（On），空间O（1）)
+     * 方法一: leetcode HashMap方法 (时间（On），空间O（1）)
      * 找出元素多于数组长度1/2的元素
      *
      * @param
