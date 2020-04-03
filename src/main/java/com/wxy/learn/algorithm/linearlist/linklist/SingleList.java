@@ -325,78 +325,7 @@ public class SingleList implements ISingleList {
         return false;
     }
 
-    /**
-     * 链表合并
-     * @param la
-     * @param lb
-     * @return
-     */
-    @Override
-    public  Node mergeSortedLists(Node la, Node lb) {
-        if (la == null) {
-            return lb;
-        }
-        if (lb == null) {
-            return la;
-        }
 
-        Node p = la;
-        Node q = lb;
-        Node head;
-        if (p.data < q.data) {
-            head = p;
-            p = p.next;
-        } else {
-            head = q;
-            q = q.next;
-        }
-        Node r = head;
-
-        while (p != null && q != null) {
-            if (p.data < q.data) {
-                r.next = p;
-                p = p.next;
-            } else {
-                r.next = q;
-                q = q.next;
-            }
-            r = r.next;
-        }
-
-        if (p != null) {
-            r.next = p;
-        } else {
-            r.next = q;
-        }
-
-        return head;
-    }
-
-    @Override
-    public Node mergeTwoLists(Node l1, Node l2) {
-        //利用哨兵结点简化实现难度 技巧三
-        Node soldier = new Node();
-        Node p = soldier;
-
-        while (l1 != null && l2 != null) {
-            if (l1.data < l2.data) {
-                p.next = l1;
-                l1 = l1.next;
-            } else {
-                p.next = l2;
-                l2 = l2.next;
-            }
-            p = p.next;
-        }
-
-        if (l1 != null) {
-            p.next = l1;
-        }
-        if (l2 != null) {
-            p.next = l2;
-        }
-        return soldier.next;
-    }
 
     @Override
     public void printNode(Node node) {
@@ -423,13 +352,15 @@ public class SingleList implements ISingleList {
         singleList.insertTail(1);
         singleList.insertTail(3);
         singleList.insertTail(5);
+        singleList.insertTail(6);
+        singleList.insertTail(7);
 
         SingleList singleList2 = new SingleList();
         singleList2.insertTail(2);
         singleList2.insertTail(4);
         singleList2.insertTail(6);
-        //Node node = singleList.inverseLinkList(singleList.findByIndex(0));
-        Node node = singleList.mergeTwoLists(singleList.findByIndex(0),singleList2.findByIndex(0));
+        Node node = singleList.inverseLinkList_head(singleList.findByIndex(0));
+     //   Node node = singleList.mergeTwoLists(singleList.findByIndex(0),singleList2.findByIndex(0));
 
 
         singleList.printNode(node);

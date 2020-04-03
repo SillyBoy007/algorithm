@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class MajorityElement {
 
     /**
-     * 方法一: leetCode HashMap方法
+     * 方法一: leetCode HashMap方法 (时间（On），空间O（1）)
      * 找出元素多于数组长度1/2的元素
      *
      * @param
@@ -47,7 +47,7 @@ public class MajorityElement {
     }
 
     /**
-     * 方法三:摩尔投票法(推荐) On
+     * 方法三:摩尔投票法(推荐) （时间On，空间O1）
      * <p>
      * 候选人(cand_num)初始化为nums[0]，票数count初始化为1。
      * 当遇到与cand_num相同的数，则票数count = count + 1，否则票数count = count - 1。

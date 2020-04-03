@@ -97,21 +97,7 @@ public interface ISingleList {
      */
     boolean checkCircle(SingleList.Node list);
 
-    /**
-     * 有序链表合并
-     * @param la 头结点a
-     * @param lb 头结点b
-     * @return
-     */
-    SingleList.Node mergeSortedLists(SingleList.Node la, SingleList.Node lb);
 
-    /**
-     * 有序链表合并(哨兵模式简化)
-     * @param l1 头结点1
-     * @param l2 头结点2
-     * @return
-     */
-    SingleList.Node mergeTwoLists(SingleList.Node l1, SingleList.Node l2);
 
     /**
      * 根据头节点打印链表
