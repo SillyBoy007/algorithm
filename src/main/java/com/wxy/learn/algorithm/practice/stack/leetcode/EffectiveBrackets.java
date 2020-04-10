@@ -17,13 +17,14 @@ import java.util.Stack;
 public class EffectiveBrackets {
 
 
-    private Map<String,String> bracketMap = new HashMap<>();
+    private Map<Character, Character> bracketMap = new HashMap<>();
 
-    public EffectiveBrackets(){
-        this.bracketMap.put(")","(");
-        this.bracketMap.put("}","{");
-        this.bracketMap.put("]","[");
+    public EffectiveBrackets() {
+        this.bracketMap.put(')', '(');
+        this.bracketMap.put('}', '{');
+        this.bracketMap.put(']', '[');
     }
+
     /**
      * 解法一:栈(时间(On，空间On))
      * 初始化栈 S。
@@ -32,23 +33,32 @@ public class EffectiveBrackets {
      * 如果我们遇到一个闭括号，那么我们检查栈顶的元素。如果栈顶的元素是一个 相同类型的 左括号，那么我们将它从栈中弹出并继续处理。否则，这意味着表达式无效。
      * 如果到最后我们剩下的栈中仍然有元素，那么这意味着表达式无效。
      *
-     * @param str
+     * @param
      * @return
      */
-    public boolean isValidate(String str) {
-        Stack<Character> stuck = new Stack<>();
-        for (int i = 0; i < str.length(); i++) {
-            char c = str.charAt(i);
+    public boolean isValidate(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
             if (this.bracketMap.containsKey(c)) {
-                char toElement = stuck.empty() ? '#' : stuck.pop();
-//                if (toElement != this.bracketMap.get(c)){
-//                    return false;
-//                }
-            }else {
-                stuck.push(c);
+
+                char topElement = stack.empty() ? '#' : stack.pop();
+
+                if (topElement != this.bracketMap.get(c)) {
+                    return false;
+                }
+            } else {
+                stack.push(c);
             }
         }
 
-        return stuck.isEmpty();
+
+        return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        EffectiveBrackets effectiveBrackets = new EffectiveBrackets();
+        System.out.println(effectiveBrackets.isValidate("(){}[]"));
     }
 }
