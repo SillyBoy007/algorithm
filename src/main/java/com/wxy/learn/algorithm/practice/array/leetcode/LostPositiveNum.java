@@ -87,6 +87,7 @@ public class LostPositiveNum {
     }
 
     /**
+     * 最优解
      * leetCode解法三:将数组视为哈希表（时间(On) 空间(O1)）
      *
      *  while 循环不会每一次都把数组里面的所有元素都看一遍。如果有一些元素在这一次的循环中被交换到了它们应该在的位置，那么在后续的遍历中，由于它们已经在正确的位置上了，代码再执行到它们的时候，就会被跳过。
@@ -121,7 +122,7 @@ public class LostPositiveNum {
     }
 
     public static void main(String[] args) {
-        int[] a = {3, 4, -1, 1};
+        int[] a = {111,222,333};
         System.out.println(hashFind(a));
     }
 }
