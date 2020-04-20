@@ -1,4 +1,4 @@
-package com.wxy.learn.note.frame;
+package com.wxy.learn.note.example;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import java.util.Map;
  * @author wangxiayun
  * @since 2020/4/16
  **/
-public class Fb {
+public class Fib {
 
     static int fb(int n) {
         if (n < 1) {
