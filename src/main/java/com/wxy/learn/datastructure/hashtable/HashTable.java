@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.hashtable;
+package com.wxy.learn.datastructure.hashtable;
 
 /**
  * @Description:散列表实现

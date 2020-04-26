@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.linearlist.stack;
+package com.wxy.learn.datastructure.linearlist.stack;
 
 /**
  * 基于链表实现的栈。

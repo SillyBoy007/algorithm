@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.linearlist.practice;
+package com.wxy.learn.datastructure.linearlist.practice;
 
 
 public class PrimaryArray<T> {

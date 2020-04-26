@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.linearlist.stack;
+package com.wxy.learn.datastructure.linearlist.stack;
 
 /**
  * 使用前后栈实现浏览器的前进后退。

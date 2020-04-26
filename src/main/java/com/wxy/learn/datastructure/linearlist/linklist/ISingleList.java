@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.linearlist.linklist;
+package com.wxy.learn.datastructure.linearlist.linklist;
 
 public interface ISingleList {
     /**

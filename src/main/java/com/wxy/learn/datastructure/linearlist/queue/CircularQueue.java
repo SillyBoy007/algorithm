@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.linearlist.queue;
+package com.wxy.learn.datastructure.linearlist.queue;
 
 /**
  * 循环队列

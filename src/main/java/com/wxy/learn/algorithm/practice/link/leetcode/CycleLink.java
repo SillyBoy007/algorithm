@@ -1,6 +1,6 @@
 package com.wxy.learn.algorithm.practice.link.leetcode;
 
-import com.wxy.learn.algorithm.linearlist.linklist.SingleList;
+import com.wxy.learn.datastructure.linearlist.linklist.SingleList;
 
 import java.util.HashSet;
 import java.util.Set;

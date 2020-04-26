@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.skiplist.learn;
+package com.wxy.learn.datastructure.skiplist.learn;
 
 import java.util.Random;
 

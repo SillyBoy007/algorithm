@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.hashtable;
+package com.wxy.learn.datastructure.hashtable;
 
 import java.util.HashMap;
 

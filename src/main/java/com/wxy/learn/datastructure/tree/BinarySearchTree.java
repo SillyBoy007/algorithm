@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.tree;
+package com.wxy.learn.datastructure.tree;
 
 public class BinarySearchTree {
     private Node tree;

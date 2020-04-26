@@ -1,6 +1,6 @@
 package com.wxy.learn.algorithm.practice.link;
 
-import com.wxy.learn.algorithm.linearlist.linklist.SingleList;
+import com.wxy.learn.datastructure.linearlist.linklist.SingleList;
 
 /**
  * @author wangxiayun

@@ -1,6 +1,4 @@
-package com.wxy.learn.algorithm.linearlist.array;
-
-import java.util.Objects;
+package com.wxy.learn.datastructure.linearlist.array;
 
 public class GenericArray<T> implements  IGenericArray{
     private Object[] data;

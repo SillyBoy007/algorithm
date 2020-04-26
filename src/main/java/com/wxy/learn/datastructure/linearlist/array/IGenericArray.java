@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.linearlist.array;
+package com.wxy.learn.datastructure.linearlist.array;
 
 public interface IGenericArray<T> {
     /**
