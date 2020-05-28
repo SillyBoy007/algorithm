@@ -100,11 +100,7 @@ public class MergeSortLink {
         linkArray.insertTail(3);
         linkArray.insertTail(5);
         linkArray.insertToHead(0);
-//        linkArray.deleteByNode(linkArray.findByIndex(1));
-//        linkArray.deleteByValue(2);
 
-        //   linkArray.printAll();
-        // linkArray.printNode(linkArray.inverseLink(linkArray.findByIndex(0)));
 
 
         LinkList linkArray2 = new LinkList();
@@ -117,7 +113,7 @@ public class MergeSortLink {
         nodes[0] = linkArray.findByIndex(0);
         nodes[1] = linkArray2.findByIndex(0);
 
-        SingleList.Node node = MergeSortLink.mergeKLists(nodes);
+        SingleList.Node node = MergeSortLink.mergekLinkList(nodes);
         linkArray.printNode(node);
 
     }
