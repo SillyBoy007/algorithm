@@ -1,4 +1,4 @@
-package com.wxy.learn.algorithm.practice.sort;
+package com.wxy.learn.algorithm.practice.sort.leetcode;
 
 /**
  * X的平方根
