@@ -40,7 +40,6 @@ public class QuickSort {
         int tmp = a[i];
         a[i] = a[r];
         a[r] = tmp;
-        System.out.println("i=" + i);
         return i;
     }
 
@@ -48,5 +47,8 @@ public class QuickSort {
         int[] array = new int[]{6, 5, 4, 3, 2, 1,9,8,7};
         quickSort(array, array.length);
         System.out.println(Arrays.toString(array));
+
     }
+
+
 }
