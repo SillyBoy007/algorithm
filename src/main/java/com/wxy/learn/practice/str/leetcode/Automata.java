@@ -13,10 +13,11 @@ package com.wxy.learn.practice.str.leetcode;
  * @since 2020/6/30
  **/
 public class Automata {
-    private int state = 0;
-    private int [][] table = {{0,1,2,3},{3,3,2,3},{3,3,2,3},{3,3,3,3}};
-    long ans = 0;
-    int sign = 1;
+    private static int state = 0;
+    private static int[][] table = {{0, 1, 2, 3}, {3, 3, 2, 3}, {3, 3, 2, 3}, {3, 3, 3, 3}};
+    private static long ans = 0;
+    private static int sign = 1;
+
     /**
      * leetCode解法一: 正常遍历 T(On) S(O1)
      *
@@ -44,7 +45,7 @@ public class Automata {
         }
         int ans = 0;
 
-        while (i < n  && Character.isDigit(str.charAt(i))) {
+        while (i < n && Character.isDigit(str.charAt(i))) {
             int tmp = str.charAt(i) - '0';
             if (flag == 1 && (ans > Integer.MAX_VALUE / 10 || (ans == Integer.MAX_VALUE / 10 && tmp > 7))) {
                 return Integer.MAX_VALUE;
@@ -60,18 +61,38 @@ public class Automata {
         return ans * flag;
     }
 
-//    public static int gets(char c){
-//        if (c == ' '){
-//            return 0;
-//        }
-//
-//        if (c == '+' || c == '-'){
-//
-//        }
-//    }
+    public static int gets(char c) {
+        if (c == ' ') {
+            return 0;
+        }
+
+        if (c == '+' || c == '-') {
+            return 1;
+        }
+
+        if (Character.isDigit(c)) {
+            return 2;
+        }
+
+        return 3;
+    }
+
+    public static void get(char c) {
+        state = table[state][gets(c)];
+        if (state == 2) {
+            ans = ans * 10 + (c - '0');
+            ans = sign == 1 ? Math.min(ans, Integer.MAX_VALUE) : Math.min(ans, -(long)Integer.MIN_VALUE);
+        }
+
+        if (state == 1 && c == '-') {
+            sign = -1;
+        }
+    }
+
 
     /**
      * leetCode解法二:自动机 T(On) S(On)
+     *
      * @param args
      */
 
@@ -79,6 +100,14 @@ public class Automata {
     public static void main(String[] args) {
         String str = "  -12323saddsad2323d";
 
-        System.out.println(stringToInt1(str));
+        char[] chars = str.toCharArray();
+        for (char aChar : chars) {
+            Automata.get(aChar);
+
+        }
+
+        //System.out.println(stringToInt1(str));
+
+        System.out.println(Automata.sign * (int) Automata.ans);
     }
 }
