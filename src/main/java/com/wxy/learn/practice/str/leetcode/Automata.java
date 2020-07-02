@@ -61,6 +61,11 @@ public class Automata {
         return ans * flag;
     }
 
+    /**
+     * leetCode解法二:自动机 T(On) S(On)
+     *
+     * @param
+     */
     public static int gets(char c) {
         if (c == ' ') {
             return 0;
@@ -90,11 +95,6 @@ public class Automata {
     }
 
 
-    /**
-     * leetCode解法二:自动机 T(On) S(On)
-     *
-     * @param args
-     */
 
 
     public static void main(String[] args) {
