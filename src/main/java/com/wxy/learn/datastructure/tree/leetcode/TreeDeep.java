@@ -94,6 +94,9 @@ public class TreeDeep {
             curr = stack.pop();
             depth = Math.max(depth, curr.level);
             if (curr.node.left != null && !set.contains(curr.node.left)) {
+                /**
+                 * 方便回朔
+                 */
                 stack.push(curr);
                 stack.push(new Record(curr.node.left, curr.level + 1));
                 set.add(curr.node.left);
