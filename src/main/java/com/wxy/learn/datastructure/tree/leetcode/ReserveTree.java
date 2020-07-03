@@ -12,6 +12,11 @@ public class ReserveTree {
     private  Node root;
 
 
+    /**
+     * leetCode解法一: 递归遍历(T(On) S(On))
+     * @param root
+     * @return
+     */
     public static Node invertTree(Node root){
         if (root == null){
             return null;
@@ -26,6 +31,11 @@ public class ReserveTree {
     }
 
 
+    /**
+     * leetCode解法二: 队列遍历(T(On) S(On))
+     * @param root
+     * @return
+     */
     public Node invertTree2(Node root){
         if (root == null){
             return null;
