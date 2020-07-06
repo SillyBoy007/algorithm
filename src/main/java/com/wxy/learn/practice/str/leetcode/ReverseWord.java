@@ -51,7 +51,7 @@ public class ReverseWord {
     }
 
     /**
-     * leetCode题解: 双端队列 T(On) S(On)
+     * leetCode题解2: 双端队列 T(On) S(On)
      *
      * @param s
      * @return

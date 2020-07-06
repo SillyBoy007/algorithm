@@ -24,6 +24,10 @@ public class ReverseString {
         }
     }
 
+    /**
+     * 解法二: 递归 T(On) S(On)
+     * @param s
+     */
     public static void reverseStr2(char[] s){
         recu(s,0,s.length-1);
     }
