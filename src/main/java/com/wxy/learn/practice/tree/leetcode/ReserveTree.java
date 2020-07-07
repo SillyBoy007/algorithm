@@ -1,4 +1,4 @@
-package com.wxy.learn.datastructure.tree.leetcode;
+package com.wxy.learn.practice.tree.leetcode;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
@@ -32,7 +32,7 @@ public class ReserveTree {
 
 
     /**
-     * leetCode解法二: 队列遍历(T(On) S(On))
+     * leetCode解法二: 广度优先遍历(T(On) S(On))
      * @param root
      * @return
      */

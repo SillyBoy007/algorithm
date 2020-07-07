@@ -1,9 +1,9 @@
-package com.wxy.learn.datastructure.tree.leetcode;
+package com.wxy.learn.practice.tree.leetcode;
 
-import com.sun.org.apache.regexp.internal.RE;
-import javafx.util.Pair;
-
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Objects;
+import java.util.Stack;
 
 /**
  * 给定一个二叉树，找出其最大深度。

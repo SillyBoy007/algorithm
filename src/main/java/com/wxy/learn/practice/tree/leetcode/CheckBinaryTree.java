@@ -1,4 +1,4 @@
-package com.wxy.learn.datastructure.tree.leetcode;
+package com.wxy.learn.practice.tree.leetcode;
 
 import java.util.Stack;
 
@@ -50,7 +50,11 @@ public class CheckBinaryTree {
         return true;
     }
 
-
+    /**
+     * leetcode解法二: 中序遍历 S(On) T(On)
+     * @param root
+     * @return
+     */
     public static boolean checkBinaryTree2(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         double inorder = Double.MAX_VALUE;
