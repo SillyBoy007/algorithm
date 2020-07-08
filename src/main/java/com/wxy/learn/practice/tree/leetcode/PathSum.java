@@ -34,7 +34,7 @@ public class PathSum {
 
 
     /**
-     * 方法二: 广度优先搜索
+     * 方法二: 广度优先搜索 T(On) S(On)
      */
 
     public boolean hasPathSum2(Node root, int sum) {
