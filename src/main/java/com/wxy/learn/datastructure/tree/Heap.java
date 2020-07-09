@@ -70,14 +70,17 @@ public class Heap {
         }
         a[1] = a[count];
         -- count;
-        heapify(a,count, 1);
+        /**
+         * 从上往下堆化
+         */
+        heaping(a,count, 1);
     }
 
 
-    private void heapify(int[] a ,int n,int i){
+    private void heaping(int[] a ,int n,int i){
         while (true){
             int maxPos = i;
-            if (i*2<=n && a[i] < a[i*2]){
+            if (i*2 <= n && a[i] < a[i*2]){
                 maxPos = i * 2;
             }
 
