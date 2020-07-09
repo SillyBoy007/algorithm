@@ -3,7 +3,11 @@ package com.wxy.learn.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * 堆排序
+ * 堆排序 T（Onlogn）其中建堆复杂度On  S(O1)
+ *
+ * 和快速排序比:
+ * 优点比快排稳定
+ * 缺点是交换次数变多，对内存不友好
  */
 public class HeapSort {
 
@@ -12,7 +16,7 @@ public class HeapSort {
         if (arr.length <= 1) {
             return;
         }
-        //1.建堆复杂度
+        //1.建堆复杂度On
         buildHeap(arr);
 
         //2.排序
@@ -42,7 +46,7 @@ public class HeapSort {
         // (arr.length - 1) / 2 为最后一个叶子节点的父节点
         // 也就是最后一个非叶子节点，依次堆化直到根节点
 
-        for (int i = (arr.length - 1) / 2; i >= 0; i--) {
+        for (int i = (arr.length/2 - 1); i >= 0; i--) {
             heapify(arr, arr.length - 1, i);
         }
 
