@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 堆排序 T（Onlogn）其中建堆复杂度On  S(O1)
- *
+ * <p>
  * 和快速排序比:
  * 优点比快排稳定
  * 缺点是交换次数变多，对内存不友好
@@ -33,8 +33,8 @@ public class HeapSort {
 
     private static void swap(int[] arr, int i, int j) {
         int tem = arr[j];
-         arr[j] = arr[i];
-         arr[i] = tem;
+        arr[j] = arr[i];
+        arr[i] = tem;
     }
 
     /**
@@ -46,7 +46,7 @@ public class HeapSort {
         // (arr.length - 1) / 2 为最后一个叶子节点的父节点
         // 也就是最后一个非叶子节点，依次堆化直到根节点
 
-        for (int i = (arr.length/2 - 1); i >= 0; i--) {
+        for (int i = (arr.length - 1) / 2; i >= 0; i--) {
             heapify(arr, arr.length - 1, i);
         }
 
@@ -86,7 +86,7 @@ public class HeapSort {
     }
 
     public static void main(String[] args) {
-        int[] a = {9,5,1,1,2,3,7,5};
+        int[] a = {9, 5, 1, 1, 2, 3, 7, 5};
         sort(a);
         System.out.println(Arrays.toString(a));
     }
