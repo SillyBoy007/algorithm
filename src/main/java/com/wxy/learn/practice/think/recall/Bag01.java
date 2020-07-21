@@ -1,6 +1,8 @@
 package com.wxy.learn.practice.think.recall;
 
 /**
+ *  01背包问题 - 回溯解法
+ *  参考:  https://www.cnblogs.com/xym4869/p/8513801.html
  * @author wangxiayun
  * @since 2020/7/20
  **/
@@ -19,63 +21,85 @@ package com.wxy.learn.practice.think.recall;
  * */
 
 public class Bag01 {
+    /**
+     * 容器最大长度
+     */
     int n = 5;
+    /**
+     * 背包的容量(重)
+     */
     int capacity = 10;
-    int[] weight = {2,6,4,1,5};
-    double[] value = {6,9,6,1,4};
+    /**
+     * 物品的重量
+     */
+    int[] weight = {2, 6, 4, 3, 12};
+    /**
+     * 背包内物品的价值
+     */
+    double[] value = {6, 9, 6, 1, 4};
     int maxValue = 0;
     int tempValue;
     int tempWeight;
+
+    /**
+     * 物品的位置
+     */
     int[] way = new int[n];
+    /**
+     * 最优解 摆放的物品
+     */
     int[] bestWay = new int[n];
-    public void BackTrack(int t){
-        //已经搜索到根节点
-        if(t>n-1){
-            if(tempValue > maxValue){
+
+    public void BackTrack(int t) {
+        //已经搜索到叶节点
+        if (t > n - 1) {
+            if (tempValue > maxValue) {
                 maxValue = tempValue;
-                for(int i=0;i<n;i++) {
+                for (int i = 0; i < n; i++) {
                     bestWay[i] = way[i];
                 }
             }
             return;
         }
         //搜索左边节点
-        if(tempWeight + weight[t] <= capacity){
+        if (tempWeight + weight[t] <= capacity) {
             tempWeight += weight[t];
             tempValue += value[t];
             way[t] = 1;
-            BackTrack(t+1);
+            BackTrack(t + 1);
             tempWeight -= weight[t];
             tempValue -= value[t];
             way[t] = 0;
         }
         //不装入这个物品，直接搜索右边的节点
-        if( Bound(t+1) >= maxValue){
-            BackTrack(t+1);
+        if (Bound(t + 1) >= maxValue) {
+            BackTrack(t + 1);
         }
     }
+
     //用于计算剩余物品的最高价值上界
-    public double Bound(int k){
+    public double Bound(int k) {
         double maxLeft = tempValue;
         int leftWeight = capacity - tempWeight;
         //尽力依照单位重量价值次序装剩余的物品
-        while(k <= n-1 && leftWeight > weight[k] ){
+        while (k <= n - 1 && leftWeight > weight[k]) {
             leftWeight -= weight[k];
             maxLeft += value[k];
             k++;
         }
         //不能装时，用下一个物品的单位重量价值折算到剩余空间。
-        if( k <= n-1){
-            maxLeft += value[k]/weight[k]*leftWeight;
+        if (k <= n - 1) {
+            maxLeft += value[k] / weight[k] * leftWeight;
         }
         return maxLeft;
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Bag01 b = new Bag01();
         b.BackTrack(0);
-        System.out.println("该背包能够取到的最大价值为:"+b.maxValue);
+        System.out.println("该背包能够取到的最大价值为:" + b.maxValue);
         System.out.println("取出的方法为:");
-        for(int i : b.bestWay) {
+        for (int i : b.bestWay) {
             System.out.print(i + "  ");
         }
     }
