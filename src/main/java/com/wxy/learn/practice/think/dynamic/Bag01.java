@@ -19,13 +19,13 @@ public class Bag01 {
              */
             for (int j = 1; j <= w; j++) {
                 /**
-                 * 当前物品i重量比背包j大
+                 * 当前物品i重量比背包j大,不装
                  */
                 if (weight[i] > j) {
                     table[i][j] = table[i - 1][j];
                 } else {
                     /**
-                     * 装得下,Max{装物品i,不装物品i}
+                     * 装得下,Max{不装物品i,装物品i}
                      */
 
                     table[i][j] = Math.max(table[i - 1][j], table[i - 1][j - weight[i]] + value[i]);
