@@ -1,4 +1,4 @@
-package com.wxy.learn.practice.think.recall;
+package com.wxy.learn.practice.think.dynamic;
 
 /**
  * 最小路径和
