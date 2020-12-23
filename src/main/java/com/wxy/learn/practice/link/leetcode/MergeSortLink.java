@@ -7,8 +7,8 @@ import java.util.PriorityQueue;
 
 
 /**
- * 合并K个排序链表
- *
+ * 合并K个排序链表(Hard)
+ * https://leetcode-cn.com/problems/merge-k-sorted-lists/
  * @author wangxiayun
  * @since 2020/4/2
  **/
