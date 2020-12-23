@@ -6,17 +6,17 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
+ * 多数元素(Easy)
+ * https://leetcode-cn.com/problems/majority-element/
  * 给定一个大小为 n 的数组，找到其中的多数元素。多数元素是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
- *  https://leetcode-cn.com/problems/majority-element/
  * @author wangxiayun
  * @since 2020/3/26
  **/
 public class MajorityElement {
 
     /**
-     * 方法一: leetcode HashMap方法 (时间（On），空间O（1）)
+     * 方法一: leetcode HashMap方法 (时间（On），空间O（n）)
      * 找出元素多于数组长度1/2的元素
-     *
      * @param
      */
     public static int majorityElement(int[] a) {
@@ -32,13 +32,15 @@ public class MajorityElement {
 
 
     /**
-     * 方法二:数组排序法(有问题)
+     * 方法二:数组排序法 （时间Onlogn , 空间（O1））
      * 确定数组中有出现次数> ⌊ n/2 ⌋的元素，那排好序之后的数组中，相同元素总是相邻的。
      * 即存在长度> ⌊ n/2 ⌋的一长串 由相同元素构成的连续子数组。
      * 举个例子：
      * 无论是1 1 1 2 3，0 1 1 1 2还是-1 0 1 1 1，数组中间的元素总是“多数元素”，毕竟它长度> ⌊ n/2 ⌋。
      *
-     * @param a
+     * tip: 该方法要确定给定的数组中有出现次数> ⌊ n/2 ⌋的元素，否则不再适用
+     *
+     * * @param a
      * @return
      */
     public static int sort(int[] a) {
@@ -59,6 +61,8 @@ public class MajorityElement {
      * 且“多数元素”的个数> ⌊ n/2 ⌋，其余元素的个数总和<= ⌊ n/2 ⌋。
      * 因此“多数元素”的个数 - 其余元素的个数总和 的结果 肯定 >= 1。
      * 这就相当于每个“多数元素”和其他元素 两两相互抵消，抵消到最后肯定还剩余至少1个“多数元素”。
+     *
+     * tip:最优解
      *
      * @param
      */

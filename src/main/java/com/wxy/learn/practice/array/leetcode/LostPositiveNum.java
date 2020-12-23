@@ -5,7 +5,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 缺失的第一个正数（Hard）  https://leetcode-cn.com/problems/first-missing-positive/
+ * 缺失的第一个正数（Hard）
+ * https://leetcode-cn.com/problems/first-missing-positive/
  * 给你一个未排序的整数数组，请你找出其中没有出现的最小的正整数。
  * 要求:你的算法的时间复杂度应为O(n)，并且只能使用常数级别的额外空间(O1)
  *
@@ -61,7 +62,7 @@ public class LostPositiveNum {
      *
      * 解题思路: 先对数组排序，利用二分查找找到缺失的数字
      *
-     * tip:排序使用的时间复杂度是 O(N \log N)O(NlogN)，是不符合这个问题的时间复杂度要求。
+     * tip:排序使用的时间复杂度是 O(log2n)O(NlogN)，是不符合这个问题的时间复杂度要求。
      *
      * @return
      */
