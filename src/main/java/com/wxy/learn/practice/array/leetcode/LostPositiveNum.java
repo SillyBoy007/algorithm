@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 缺失的第一个正数  https://leetcode-cn.com/problems/first-missing-positive/
+ * 缺失的第一个正数（Hard）  https://leetcode-cn.com/problems/first-missing-positive/
  * 给你一个未排序的整数数组，请你找出其中没有出现的最小的正整数。
  * 要求:你的算法的时间复杂度应为O(n)，并且只能使用常数级别的额外空间(O1)
  *
@@ -15,7 +15,7 @@ import java.util.Set;
 public class LostPositiveNum {
     /**
      * 排序的方法，时间复杂度较高，不符合要求
-     *
+     * 解题思路: 先排序,再找出第一个没有的数字
      * @param a
      * @return
      */
@@ -31,7 +31,11 @@ public class LostPositiveNum {
 
 
     /**
-     * leetCode解法一:哈希表遍历法（时间(O1) 空间(On)）
+     * leetCode解法一:哈希表遍历法（时间(On) 空间(On)）
+     *
+     * 解题思路: 利用HashSet插入时内部排序的特点
+     *
+     * tip: 空间复杂度不符合
      *
      * @param a
      */
@@ -54,7 +58,10 @@ public class LostPositiveNum {
 
     /**
      * leetCode解法二:二分查找(时间(Onlogn)  空间 (O1))
-     * 这个思路需要先对数组排序，而排序使用的时间复杂度是 O(N \log N)O(NlogN)，是不符合这个问题的时间复杂度要求。
+     *
+     * 解题思路: 先对数组排序，利用二分查找找到缺失的数字
+     *
+     * tip:排序使用的时间复杂度是 O(N \log N)O(NlogN)，是不符合这个问题的时间复杂度要求。
      *
      * @return
      */
@@ -87,15 +94,18 @@ public class LostPositiveNum {
     }
 
     /**
-     * 最优解
+     *
      * leetCode解法三:将数组视为哈希表（时间(On) 空间(O1)）
      *
-     *  while 循环不会每一次都把数组里面的所有元素都看一遍。如果有一些元素在这一次的循环中被交换到了它们应该在的位置，那么在后续的遍历中，由于它们已经在正确的位置上了，代码再执行到它们的时候，就会被跳过。
-     最极端的一种情况是，在第 1 个位置经过这个 while 就把所有的元素都看了一遍，这个所有的元素都被放置在它们应该在的位置，那么 for 循环后面的部分的 while 的循环体都不会被执行。
-
-     平均下来，每个数只需要看一次就可以了，while 循环体被执行很多次的情况不会每次都发生。这样的复杂度分析的方法叫做均摊复杂度分析。
-
-
+     *  解题思路: while 循环不会每一次都把数组里面的所有元素都看一遍。
+     *  如果有一些元素在这一次的循环中被交换到了它们应该在的位置，那么在后续的遍历中，
+     *  由于它们已经在正确的位置上了，代码再执行到它们的时候，就会被跳过。
+     *  最极端的一种情况是，在第 1 个位置经过这个 while 就把所有的元素都看了一遍，这个所有的元素都被放置在它们应该在的位置，
+     *  那么 for 循环后面的部分的 while 的循环体都不会被执行。平均下来，每个数只需要看一次就可以了，
+     *  while 循环体被执行很多次的情况不会每次都发生。这样的复杂度分析的方法叫做均摊复杂度分析。
+     *
+     *  tip:最优解
+     *
      * @param a
      * @return
      */
@@ -122,7 +132,7 @@ public class LostPositiveNum {
     }
 
     public static void main(String[] args) {
-        int[] a = {111,222,333};
+        int[] a = {3,4,1,7,5};
         System.out.println(hashFind(a));
     }
 }
