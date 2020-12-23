@@ -32,7 +32,10 @@ public class LostPositiveNum {
 
 
     /**
-     * leetCode解法一:哈希表遍历法（时间(On) 空间(On)）
+     * leetCode解法一:哈希表遍历法
+     *
+     * T: O(n)
+     * S: O(n)
      *
      * 解题思路: 利用HashSet插入时内部排序的特点
      *
@@ -58,7 +61,9 @@ public class LostPositiveNum {
     }
 
     /**
-     * leetCode解法二:二分查找(时间(Onlogn)  空间 (O1))
+     * leetCode解法二:二分查找
+     * T: O(nlogn)
+     * S: O(1)
      *
      * 解题思路: 先对数组排序，利用二分查找找到缺失的数字
      *
@@ -96,7 +101,9 @@ public class LostPositiveNum {
 
     /**
      *
-     * leetCode解法三:将数组视为哈希表（时间(On) 空间(O1)）
+     * leetCode解法三:将数组视为哈希表
+     * T: O(n)
+     * S: O(1)
      *
      *  解题思路: while 循环不会每一次都把数组里面的所有元素都看一遍。
      *  如果有一些元素在这一次的循环中被交换到了它们应该在的位置，那么在后续的遍历中，

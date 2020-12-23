@@ -15,7 +15,9 @@ import java.util.stream.Collectors;
 public class MajorityElement {
 
     /**
-     * 方法一: leetcode HashMap方法 (时间（On），空间O（n）)
+     * 方法一: leetcode HashMap方法
+     * T: O(n）
+     * S: O(n)
      * 找出元素多于数组长度1/2的元素
      * @param
      */
@@ -32,7 +34,9 @@ public class MajorityElement {
 
 
     /**
-     * 方法二:数组排序法 （时间Onlogn , 空间（O1））
+     * 方法二:数组排序法
+     * T: O(nlogn)
+     * S: O(1)
      * 确定数组中有出现次数> ⌊ n/2 ⌋的元素，那排好序之后的数组中，相同元素总是相邻的。
      * 即存在长度> ⌊ n/2 ⌋的一长串 由相同元素构成的连续子数组。
      * 举个例子：
@@ -49,7 +53,10 @@ public class MajorityElement {
     }
 
     /**
-     * 方法三:摩尔投票法(推荐) （时间On，空间O1）
+     * 方法三:摩尔投票法(推荐)
+     * T: O(n)
+     * S: O(1)
+     *
      * <p>
      * 候选人(cand_num)初始化为nums[0]，票数count初始化为1。
      * 当遇到与cand_num相同的数，则票数count = count + 1，否则票数count = count - 1。

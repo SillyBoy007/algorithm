@@ -12,9 +12,10 @@ import java.util.*;
 public class ThreeNumSum {
 
     /**
-     * HashMap法 时间(n^2 空间On)
-     * 不能保证去重
-     * 复杂度过高
+     * HashMap法
+     * T: O(n^2)
+     * S: O(n)
+     * Tip: 不能保证去重,复杂度过高
      *
      * @param a
      * @return
@@ -40,7 +41,9 @@ public class ThreeNumSum {
     }
 
     /**
-     * 力扣解法 (时间(On^2) 空间(On))
+     * 力扣解法
+     * T: O(n^2)
+     * S: O(n)
      * 先排序，利用双指针
      *
      * @param a

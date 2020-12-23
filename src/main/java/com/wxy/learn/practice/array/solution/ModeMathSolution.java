@@ -1,17 +1,22 @@
-package com.wxy.learn.practice.array.leetcode;
+package com.wxy.learn.practice.array.solution;
 
 import java.util.*;
 
 
 /**
- * 求众数
+ * 求众数 给定一个大小为 n 的,找出数组中元素个数最多的数
  * @author wangxiayun
  * @since 2020/3/26
  **/
-public class ModeMath {
+public class ModeMathSolution {
 
     /**
-     * 变型: 利用hash map求众数，数组中元素个数最多的数
+     *
+     * 变型: 利用hash map求众数
+     * T: O(n)
+     * S: O(n)
+     *
+     *
      *
      * @param a
      * @return
