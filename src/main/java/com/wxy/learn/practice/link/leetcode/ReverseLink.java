@@ -6,9 +6,9 @@ import com.wxy.learn.datastructure.linearlist.linklist.SingleList;
 import java.util.Stack;
 
 /**
- * 206. 反转链表
+ * 206. 反转链表(Easy)
  * https://leetcode-cn.com/problems/reverse-linked-list/
- *
+ * 反转一个单链表。
  * @author wxy
  * @since 2020-12-23
  */
