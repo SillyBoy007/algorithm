@@ -41,7 +41,7 @@ public class ChooseSort {
     }
 
     public static void main(String[] args) {
-        int [] a = {3,4,1,5,7,2};
+        int [] a = {3,2,1};
         chooseSort(a);
         System.out.println(Arrays.toString(a));
     }

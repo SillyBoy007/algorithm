@@ -3,7 +3,7 @@ package com.wxy.learn.practice.sort;
 import java.util.Arrays;
 
 /**
- * 希尔排序
+ * 希尔排序 O(n^(1.3—2)) O(nlogn)～O（n2）
  *
  * @author wxy
  * @since 2020-06-15
