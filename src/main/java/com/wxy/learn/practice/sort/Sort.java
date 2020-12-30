@@ -140,7 +140,10 @@ public class Sort {
         }
     }
 
-
+    /**
+     * 快速
+     * @param a
+     */
     public static void quick(int[] a) {
         sort(a, 0, a.length - 1);
     }
