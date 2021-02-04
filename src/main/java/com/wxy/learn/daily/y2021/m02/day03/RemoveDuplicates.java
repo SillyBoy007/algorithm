@@ -20,6 +20,5 @@ public class RemoveDuplicates{
         }
 
         return j+1;
-
     }
 }
